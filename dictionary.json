@@ -1,0 +1,10 @@
+{
+	"mouse|click|trackpad|touchpad|scrolling" : [
+		{
+			"os" : "manjaro",
+			"filepath" : "/etc/X11/xorg.conf.d/30-touchpad.conf",
+			"instructions" : "",
+			"info_link" : ""
+		}
+	]
+}
