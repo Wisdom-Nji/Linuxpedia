@@ -3,7 +3,6 @@
 import json
 
 # list of keywords is to config paths 
-
 # mouse, touchpad, scrolling -> /etc/<>
 
 def search( keyword, os, dictionary ):
@@ -12,13 +11,17 @@ def search( keyword, os, dictionary ):
         if keyword in keywords:
             for details in dictionary[key]:
                 if details['os'] == os:
-                    print( details['filepath'] )
-
+                    print( "filepath:", details['filepath'] )
+                    print( "instruction:", details['instructions'] )
+                    print()
 
 dictionaryFilename = "dictionary.json"
 jsonFile = open( dictionaryFilename )
 configDictionary = json.load( jsonFile )
 
-searchTerm = "click"
+# searchTerm = "click"
+# os = "manjaro"
+
+searchTerm = "wallpaper"
 os = "manjaro"
 search( searchTerm, os, configDictionary )
