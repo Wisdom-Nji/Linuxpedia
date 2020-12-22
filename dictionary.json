@@ -1,6 +1,7 @@
 {
 	"mouse|click|trackpad|touchpad|scrolling" : [
 		{
+			"type" : "config",
 			"os" : "manjaro",
 			"filepath" : "/etc/X11/xorg.conf.d/30-touchpad.conf",
 			"instructions" : "",
@@ -9,6 +10,7 @@
 	],
 	"i3" : [
 		{
+			"type" : "config",
 			"os" : "manjaro",
 			"filepath" : "~/.i3/config",
 			"instructions" : "",
@@ -17,6 +19,7 @@
 	],
 	"feh|background|wallpaper" : [
 		{
+			"type" : "config",
 			"os" : "manjaro",
 			"filepath" : "~/.fehbg",
 			"instructions" : "Set wallpaper with command `feh --bg-scale <path_to_picture>`.\nYou can add the filepath to a startup script to set the background on desktop reboot",
@@ -25,10 +28,17 @@
 	],
 	"monitors|xrandr|screens|arandr" : [
 		{
+			"type" : "config",
 			"os" : "manjaro",
 			"filepath" : "",
 			"instructions" : "Install arandr to setup multiple monitors when using a windows manager like i3. Once you save your first setup, you can reload it using `arandr <path_to_saved_config>`",
 			"info_link" : ""
+		}
+	],
+	"burnout|programmer" : [
+		{
+			"type" : "reading",
+			"info_link" : "https://www.developerdotstar.com/mag/articles/davis_purpose-driven.html"
 		}
 	]
 }

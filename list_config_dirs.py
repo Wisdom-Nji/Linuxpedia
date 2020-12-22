@@ -5,15 +5,31 @@ import json
 # list of keywords is to config paths 
 # mouse, touchpad, scrolling -> /etc/<>
 
+def reading( details, keyword ):
+        print(f"[ type: reading | keyword: {keyword} ]")
+        print("Link:", details["info_link"])
+        print()
+
+def config( details, keyword ):
+        print(f"[ type: reading | keyword: {keyword} ]")
+        print( "Filepath:", details['filepath'] )
+        print( "Instruction:", details['instructions'] )
+        print()
+
 def search( keyword, os, dictionary ):
+    typesDictionary = {
+            "reading" : reading,
+            "config" : config
+    }
     for key in dictionary:
         keywords = key.split( '|' )
         if keyword in keywords:
             for details in dictionary[key]:
-                if details['os'] == os:
-                    print( "filepath:", details['filepath'] )
-                    print( "instruction:", details['instructions'] )
-                    print()
+                if details["type"] == "reading":
+                    typesDictionary["reading"]( details, keyword )
+
+                elif details["type"] == "config" and details["os"] == os:
+                    typesDictionary["config"]( details, keyword)
 
 dictionaryFilename = "dictionary.json"
 jsonFile = open( dictionaryFilename )
